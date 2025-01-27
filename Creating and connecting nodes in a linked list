@@ -1,0 +1,112 @@
+#include <iostream>
+using namespace std;
+
+// Define the Node structure
+struct Node {
+    int data;      // Data part of the node
+    Node* next;    // Pointer to the next node
+};
+
+// Function to create a new node
+Node* createNode(int value) {
+    Node* newNode = new Node(); // Allocate memory for a new node
+    newNode->data = value;      // Set the data of the node
+    newNode->next = NULL;       // Initialize the next pointer to NULL
+    return newNode;             // Return the newly created node
+}
+
+// Function to insert a node at the end of the linked list
+void insertAtEnd(Node*& head, int value) { // Pass 'head' by reference
+    Node* newNode = createNode(value);     // Create a new node
+
+    // If the list is empty, set the new node as the head
+    if (head == NULL) {
+        head = newNode;
+        return;
+    }
+
+    // Traverse to the end of the list
+    Node* current = head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    // Attach the new node at the end
+    current->next = newNode;
+}
+
+int main() {
+    Node* head = NULL; // Initialize an empty linked list
+
+    // Insert nodes at the end
+    insertAtEnd(head, 10);
+    insertAtEnd(head, 20);
+    insertAtEnd(head, 30);
+    insertAtEnd(head, 40);
+
+    return 0;
+}
+
+/*
+#include <iostream>
+using namespace std;
+
+// Define the Node structure
+struct Node {
+    int data;      // Data part of the node
+    Node* next;    // Pointer to the next node
+};
+
+// Function to create a new node
+Node* createNode(int value) {
+    Node* newNode = new Node(); // Allocate memory for a new node
+    newNode->data = value;      // Set the data of the node
+    newNode->next = NULL;       // Initialize the next pointer to NULL
+    return newNode;             // Return the newly created node
+}
+
+// Function to insert a node at the end of the linked list
+void insertAtEnd(Node*& head, int value) { // Pass 'head' by reference
+    Node* newNode = createNode(value);     // Create a new node
+
+    // If the list is empty, set the new node as the head
+    if (head == NULL) {
+        head = newNode;
+        return;
+    }
+
+    // Traverse to the end of the list
+    Node* current = head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+
+    // Attach the new node at the end
+    current->next = newNode;
+}
+
+// Function to display the linked list
+void displayList(Node* head) {
+    Node* current = head;
+    while (current != NULL) {
+        cout << current->data << " -> ";
+        current = current->next;
+    }
+    cout << "NULL" << endl;
+}
+
+int main() {
+    Node* head = NULL; // Initialize an empty linked list
+
+    // Insert nodes at the end
+    insertAtEnd(head, 10);
+    insertAtEnd(head, 20);
+    insertAtEnd(head, 30);
+    insertAtEnd(head, 40);
+
+    // Display the linked list
+    displayList(head);
+
+    return 0;
+}
+*/

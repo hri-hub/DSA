@@ -26,7 +26,6 @@ int main() {
       next = NULL;
   }
   Node* n1 = new Node(10); //This calls Node() above n gets executed
-  Node* n2 = new Node(20); 
 
 Without Constructor //Declare Manually for each Node 
   Node* n1 = new Node;

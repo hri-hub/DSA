@@ -7,7 +7,7 @@ struct Node {
     Node* next;    // Pointer to the next node
 };
 
-// Function to create a new node
+// Node Creation
 Node* createNode(int value) {
     Node* newNode = new Node(); // Allocate memory for a new node
     newNode->data = value;      // Set the data of the node

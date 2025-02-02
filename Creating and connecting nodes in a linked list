@@ -16,15 +16,16 @@ Node* createNode(int value) {
 }
 
 // Function to insert a node at the end of the linked list
-void insertAtEnd(Node*& head, int value) { // Pass 'head' by reference
+void insertAtEnd(Node* head, int value) { // Pass 'head' by reference
     Node* newNode = createNode(value);     // Create a new node
 
-    // If the list is empty, set the new node as the head
+    // If head is NULL, the node created is first Node in LL
     if (head == NULL) {
         head = newNode;
         return;
     }
 
+    // Starting from head n traversing to end, after you get next as null stop there and new node is attacthed here
     // Traverse to the end of the list
     Node* current = head;
     while (current->next != NULL) {
@@ -46,6 +47,9 @@ int main() {
 
     return 0;
 }
+
+
+
 
 /*
 #include <iostream>

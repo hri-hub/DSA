@@ -1,0 +1,49 @@
+//Create a single node dynamically using a class Node
+#include <iostream>
+using namespace std;
+
+class Node {
+public:
+    int val;
+    Node* next;
+
+    Node(int data) {
+        val = data;
+        next = NULL;
+    }
+};
+
+int main() {
+    Node* n = new Node(1);  
+    cout << n->val << " " << n->next << endl;
+    return 0;
+}
+
+/*Constructor --> 9th line 
+ Constructor  //Dynamic declaration
+  Node(int data) {
+      value = data;
+      next = NULL;
+  }
+  Node* n1 = new Node(10); //This calls Node() above n gets executed
+  Node* n2 = new Node(20); 
+
+Without Constructor //Declare Manually for each Node 
+  Node* n1 = new Node;
+  n1->value = 10;
+  n1->next = NULL;
+
+Node* n2 = new Node;
+n2->value = 20;
+n2->next = NULL;
+
+Why No use of head??
+     Your code doesn't need a head pointer because it creates only one node.
+ However, in a real linked list, head is essential for keeping track of the first node to traverse or modify the list.
+
+Why Use -> Instead of . in C++??
+     The arrow operator (->) is used in C++ to access members of a class or struct through a pointer.
+->(arrow)....	When accessing members through a pointer....	pointer->val
+n->val equals (*n).val
+
+

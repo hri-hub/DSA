@@ -19,7 +19,8 @@ Node* createNode(int value) {
 void insertAtEnd(Node* head, int value) { // Pass 'head' by reference
     Node* newNode = createNode(value);     // Create a new node
 
-    // If head is NULL, the node created is first Node in LL
+    
+    // If head is NULL, first nodes address gets stored in head
     if (head == NULL) {
         head = newNode;
         return;
